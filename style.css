@@ -1,132 +1,61 @@
-.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}
-@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="3923b5ce-a4e4-7a38-9ac2-ef066d2d72aa"] {opacity:0;-webkit-transform:translate3d(0, 7%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 7%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 7%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 7%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}
- 
-
-  /* Crisp Font Rendering */
-  body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* Safari FullScreen Fix */  
-  body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-  html {
-    height: -webkit-fill-available;
-  }  
-
-
-  .h2 {
-    background: -webkit-linear-gradient(rgba(245,202,191,0) 60%, #F5CABF 61%);
-    display:inline;
-  }
-
-
-  a {
-    color: inherit;
-  }
-
-  select {
-    -webkit-appearance: none;  /*Removes default chrome and safari style*/
-    -moz-appearance: none; /* Removes Default Firefox style*/
-  }  
-
-  .gradient__frame{
-    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
-    will-change: transform !important;
-  }
-  
-   .editorialnav__img,.editorial__frame,.nav__editorial {
-    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
-    will-change: transform !important;
-  }
-  
-
-  /* Navigation */
-  :root { --app-height: 100%; }
-  .navmenu.is--meganav { height: var(--app-height); }
-  
-
- 
-  .cta__gradientglow.is--bttn{
-  -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  }
-
-:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}
-
-
-  .editorial__frame,.postcard, .magazine__hero {-webkit-mask-image: -webkit-radial-gradient(white, black);}
-
-  .no__click, .nav__shadow, .edge__circle, .nav__overlay, .pane__overlay {
-    pointer-events: none !important;
-  }
-
-
-
-  /* Nav Current Link */
-  .mobilenav__link.w-inline-block.w--current {
-    padding-left: 24px !important;
-    color: #9898d1 !important;
-  }
-
-  .mobilenav__link.w-inline-block.w--currentt:hover {
-    color: #bebfe0 !important;
-  }
-
-  .navlogo.w-nav-brand.w--current {
-    color: #2fe1b9 !important;
-  }
-
-
-  @media only screen and (min-width: 992px) and (max-width: 1280px)  {
-    .nav__list.is--short {
-      left: 7%;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .mobilenav__link.w-inline-block.w--current {
-      padding-left: 16px !important;
-    }
-  }
-
-
-.cls-1{fill:currentColor;}
-.cls-1{fill:currentColor;}
-.cls-1{fill:currentColor;}
-.cls-1{fill:currentColor;}
-
-  @media screen and (max-width: 1298px) {
-  
-    #dashboard-mini, #coinslider-mini {
-     display:block;
-  }
-  
-    #dashboard-max {
-     display:none;
-  }
-
-
-
-  .splide__track {overflow: visible;}
-
-  span.splide__sr{display:none;}
-
-  .splide__arrow.splide__arrow--next, .splide__arrow.splide__arrow--prev{
-    display: none;
-  }
-  
-  .splide *:focus { outline: none; }
-
-  ul.splide__pagination{
-    list-style: none;
+body {
+    background-color: #1F1F2E;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-  }
+}
 
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
 
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
 
-.cls-1{fill:currentColor;}
+.hero {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #1DB954;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.ratings {
+    margin-top: 20px;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.review-card {
+    background-color: #2C2C3E;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+footer {
+    text-align: center;
+    margin: 30px 0;
+}
