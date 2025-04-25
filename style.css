@@ -1,317 +1,142 @@
-/* Basic Reset */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
 }
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 header {
-    background-color: #141c2c; /* Dark background */
-    color: #fff;
-    padding: 20px 0;
+  background: #111827;
+  color: white;
+  padding: 20px;
 }
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
-
 .logo {
-    font-size: 1.5em;
-    font-weight: 700;
+  font-size: 1.5em;
+  font-weight: bold;
 }
-
-nav ul {
-    list-style: none;
-    display: flex;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
-
-nav ul li {
-    margin-left: 20px;
+.nav-links a {
+  color: white;
+  text-decoration: none;
 }
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 .cta-button {
-    background-color: #007bff; /* Example primary color */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  background: #4f46e5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
-
 .cta-button:hover {
-    background-color: #0056b3;
+  background: #3730a3;
 }
-
 .hero {
-    background-color: #e9ecef;
-    padding: 80px 0;
-    text-align: center;
+  background: #e0e7ff;
+  padding: 80px 20px;
+  text-align: center;
 }
-
-.hero .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.hero-content {
-    max-width: 500px;
-    text-align: left;
-}
-
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #141c2c; /* Dark text */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.features-list {
+  list-style: none;
+  max-width: 700px;
+  margin: auto;
+}
+.features-list li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+form {
+  background: white;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  background: #4f46e5;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
 
-.highlight {
-    color: #007bff; /* Example accent color */
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
 }
-
-.hero .lead {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 30px;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-.hero-buttons a {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-right: 10px;
+#wallet-address {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #4f46e5;
 }
-
-.primary-button {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.primary-button:hover {
-    background-color: #0056b3;
-}
-
-.secondary-button {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
-}
-
-.secondary-button:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.hero-image img {
-    max-width: 400px;
-    height: auto;
-}
-
-.about {
-    padding: 60px 0;
-    background-color: #fff;
-}
-
-.about h2, .contracts h2, .how-it-works h2, .resources h2, .contact h2 {
-    font-size: 2em;
-    color: #141c2c; /* Dark heading */
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.about p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.contracts {
-    padding: 60px 0;
-    background-color: #f4f4f4;
-}
-
-.contract-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.contract-card {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contract-card h3 {
-    font-size: 1.5em;
-    color: #141c2c; /* Dark heading */
-    margin-bottom: 15px;
-}
-
-.contract-card p {
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.contract-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-.contract-card ul li {
-    color: #555;
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.contract-card ul li:before {
-    content: '✓';
-    color: #28a745; /* Example checkmark color */
-    position: absolute;
-    left: 0;
-}
-
-.contract-card button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border: none;
-    margin-right: 10px;
-}
-
-.contract-card .secondary-button {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
-}
-
-.contract-card .secondary-button:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.contract-card .primary-button {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.contract-card .primary-button:hover {
-    background-color: #0056b3;
-}
-
-.contracts .note {
-    text-align: center;
-    color: #777;
-    font-style: italic;
-}
-
-.how-it-works {
-    padding: 60px 0;
-    background-color: #fff;
-}
-
-.steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.step {
-    padding: 25px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.step-number {
-    background-color: #007bff;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    margin: 0 auto 15px;
-}
-
-.step h3 {
-    font-size: 1.3em;
-    color: #141c2c; /* Dark heading */
-    margin-bottom: 10px;
-}
-
-.step p {
-    color: #555;
-}
-
-.resources {
-    padding: 60px 0;
-    background-color: #f4f4f4;
-}
-
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.resource-card {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.resource-card h3 {
-    font-size: 1.3em;
-    color: #141c2c; /* Dark heading */
-    margin-bottom: 15px;
-}
-
-.resource-card p {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.resource-card .read-more {
-    display: inline-block;
