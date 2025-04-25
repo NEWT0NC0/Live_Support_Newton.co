@@ -1,184 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Your Digital Assets with Blockchain Ownership Contracts</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChainScript Labs - Smart Contract Services</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">YourLogo</div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contracts">Our Contracts</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-            <button class="cta-button">Get Started</button>
-        </div>
-    </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Secure Your Digital Assets with <span class="highlight">Blockchain Ownership Contracts</span></h1>
-                <p class="lead">Effortlessly create and manage legally sound ownership contracts secured by the transparency and immutability of the blockchain.</p>
-                <div class="hero-buttons">
-                    <a href="#contracts" class="primary-button">Explore Contracts</a>
-                    <a href="#how-it-works" class="secondary-button">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/blockchain-hero.svg" alt="Blockchain and Contract Illustration">
-            </div>
-        </div>
-    </section>
+  <header>
+    <nav>
+      <div class="logo">ChainScript Labs</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="cta-button" onclick="connectWallet()">Connect Wallet</button>
+    </nav>
+    <div id="wallet-address"></div>
+  </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>At [Your Company Name], we are passionate about leveraging the power of blockchain technology to revolutionize digital ownership. Our team comprises experts in blockchain development, legal frameworks, and user experience design. We believe that securing digital assets should be accessible, transparent, and legally robust. Our mission is to provide individuals and businesses with a seamless platform to create and manage blockchain-backed ownership contracts, ensuring clarity and security in the digital landscape.</p>
-            <p>We are committed to building trust and providing a reliable solution for protecting your valuable digital assets.</p>
-        </div>
-    </section>
+  <section class="hero fade-in">
+    <h1>Custom Blockchain Contracts Delivered Fast</h1>
+    <p>We build, test, and deploy smart contracts for DeFi, NFTs, DAOs, and more.</p>
+    <a class="cta-button" href="#services">Explore Services</a>
+  </section>
 
-    <section id="contracts" class="contracts">
-        <div class="container">
-            <h2>Our Contracts</h2>
-            <div class="contract-grid">
-                <div class="contract-card">
-                    <h3>Digital Art Ownership</h3>
-                    <p>Secure ownership rights for your unique digital artworks, ensuring provenance and authenticity on the blockchain.</p>
-                    <ul>
-                        <li>Immutable ownership record</li>
-                        <li>Transferable rights</li>
-                        <li>Clear terms and conditions</li>
-                    </ul>
-                    <button class="secondary-button">Learn More</button>
-                    <button class="primary-button">Customize Contract</button>
-                </div>
-                <div class="contract-card">
-                    <h3>Domain Name Ownership</h3>
-                    <p>Establish clear and verifiable ownership of your valuable domain names using blockchain technology.</p>
-                    <ul>
-                        <li>Secure and transparent registry</li>
-                        <li>Simplified transfer process</li>
-                        <li>Proof of ownership</li>
-                    </ul>
-                    <button class="secondary-button">Learn More</button>
-                    <button class="primary-button">Customize Contract</button>
-                </div>
-                <div class="contract-card">
-                    <h3>Software License Ownership</h3>
-                    <p>Manage and track software license ownership efficiently and securely with blockchain contracts.</p>
-                    <ul>
-                        <li>Clear usage terms</li>
-                        <li>License transfer management</li>
-                        <li>Tamper-proof records</li>
-                    </ul>
-                    <button class="secondary-button">Learn More</button>
-                    <button class="primary-button">Customize Contract</button>
-                </div>
-                </div>
-            <p class="note">More contract types are being added regularly. Contact us if you have specific needs.</p>
-        </div>
-    </section>
+  <section id="services" class="fade-in">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>DeFi Smart Contracts</h3>
+        <p>Yield farming, staking, and lending protocols built with secure, gas-optimized Solidity code.</p>
+      </div>
+      <div class="service-card">
+        <h3>NFT Smart Contracts</h3>
+        <p>ERC-721 and ERC-1155 NFT minting, royalties, and full collection deployment.</p>
+      </div>
+      <div class="service-card">
+        <h3>DAO Development</h3>
+        <p>Governance tokens and decision-making contracts built on established DAO frameworks.</p>
+      </div>
+      <div class="service-card">
+        <h3>Auditing & Security</h3>
+        <p>Manual and automated auditing with test coverage, simulations, and documentation.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Select Your Contract</h3>
-                    <p>Browse our library of pre-designed ownership contract templates tailored for various digital assets.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Customize & Define Terms</h3>
-                    <p>Easily customize the contract details, including asset specifics, ownership terms, and any specific conditions.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Secure on the Blockchain</h3>
-                    <p>Once finalized, your contract is securely recorded on the blockchain, providing an immutable and transparent record of ownership.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Manage & Transfer (Optional)</h3>
-                    <p>Easily manage your contracts and securely transfer ownership when needed through our platform.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="why-us" class="fade-in">
+    <h2>Why Choose ChainScript Labs?</h2>
+    <ul class="features-list">
+      <li><strong>✅ Expert Developers:</strong> Solidity, Hardhat, OpenZeppelin.</li>
+      <li><strong>⚡ Fast Turnaround:</strong> Delivered in 3–7 days depending on scope.</li>
+      <li><strong>💰 Fixed Pricing:</strong> Know your costs upfront—no surprises.</li>
+      <li><strong>🔧 Support Included:</strong> Bug fixes and guidance post-deployment.</li>
+    </ul>
+  </section>
 
-    <section id="resources" class="resources">
-        <div class="container">
-            <h2>Resources & FAQ</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <h3>Understanding Blockchain Ownership</h3>
-                    <p>Learn about the benefits and principles of securing ownership on the blockchain.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Legal Validity of Digital Contracts</h3>
-                    <p>An overview of the legal considerations for blockchain-based ownership agreements.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Frequently Asked Questions</h3>
-                    <p>Find answers to common questions about our services and blockchain ownership contracts.</p>
-                    <a href="#" class="read-more">View FAQs</a>
-                </div>
-                </div>
-        </div>
-    </section>
+  <section id="contact" class="fade-in">
+    <h2>Get in Touch</h2>
+    <form onsubmit="validateForm(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have questions or need assistance? Reach out to our team.</p>
-            <form class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+      <label for="message">Project Details</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-                <button type="submit" class="primary-button">Send Message</button>
-            </form>
-        </div>
-    </section>
+  <footer>
+    &copy; 2025 ChainScript Labs. All rights reserved.
+  </footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Company Name. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Basic JavaScript for potential interactivity (can be expanded)
-        document.addEventListener('DOMContentLoaded', function() {
-            const getStartedButton = document.querySelector('.cta-button');
-            if (getStartedButton) {
-                getStartedButton.addEventListener('click', function() {
-                    window.location.href = '#contracts'; // Example action
-                });
-            }
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
