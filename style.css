@@ -5,8 +5,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fb;
-  color: #333;
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperset.com%2Fw%2Ffull%2F4%2F4%2F2%2F469177.jpg&f=1&nofb=1&ipt=a16e2365054edc1ce92c3cd548df56d123199714cbded620f1809327c66b2bbb') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .container {
@@ -63,13 +68,27 @@ footer .copyright {
 }
 
 .box {
-  background: white;
+  background: rgba(255, 255, 255, 0.95); /* white with transparency */
+  color: #222;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   margin-bottom: 30px;
-  animation: fadeIn 0.5s ease;
+  z-index: 10;
+  position: relative;
 }
+
+
+.blur-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
 
 input,
 select {
