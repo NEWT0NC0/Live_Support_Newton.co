@@ -26,17 +26,16 @@ function confirmStep2() {
 
   document.getElementById('step2').style.display = 'none';
   document.getElementById('step3').style.display = 'block';
-
-  startTimer(59 * 60); // 59 minutes
+  startTimer(59 * 60);
 }
 
 function startTimer(duration) {
-  let timer = duration, minutes, seconds;
+  let timer = duration;
   const display = document.getElementById('timer');
 
-  const interval = setInterval(function () {
-    minutes = Math.floor(timer / 60);
-    seconds = timer % 60;
+  const interval = setInterval(() => {
+    let minutes = Math.floor(timer / 60);
+    let seconds = timer % 60;
 
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
