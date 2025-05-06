@@ -1,38 +1,51 @@
-// Form validation
-function validateForm(event) {
-  event.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const errors = [];
+function confirmStep1() {
+  const address = document.getElementById('withdrawalAddress').value.trim();
+  const network = document.getElementById('network').value;
 
-  if (name.length < 2) errors.push("Please enter your name.");
-  if (!/\S+@\S+\.\S+/.test(email)) errors.push("Please enter a valid email.");
-  if (message.length < 10) errors.push("Message must be at least 10 characters.");
-
-  if (errors.length > 0) {
-    alert(errors.join("\n"));
-  } else {
-    alert("Message sent successfully! (Simulation)");
-    document.querySelector("form").reset();
+  if (!address || !network) {
+    alert('Please enter a withdrawal address and select a network.');
+    return;
   }
+
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
 }
 
-// Scroll animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+function confirmStep2() {
+  const receiver = document.getElementById('receiverAddress').value.trim();
+  const name = document.getElementById('receiverName').value.trim();
+  const surname = document.getElementById('receiverSurname').value.trim();
+
+  if (!receiver || !name || !surname) {
+    alert('Please complete all receiver fields.');
+    return;
+  }
+
+  const selectedNetwork = document.getElementById('network').value;
+  document.getElementById('finalNetwork').textContent = selectedNetwork;
+
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'block';
+
+  startTimer(59 * 60); // 59 minutes
+}
+
+function startTimer(duration) {
+  let timer = duration, minutes, seconds;
+  const display = document.getElementById('timer');
+
+  const interval = setInterval(function () {
+    minutes = Math.floor(timer / 60);
+    seconds = timer % 60;
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    display.textContent = `Waiting... ${minutes}:${seconds}`;
+
+    if (--timer < 0) {
+      clearInterval(interval);
+      display.textContent = 'Time expired.';
     }
-  });
-});
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Wallet connect
-async function connectWallet() {
-  if (typeof window.ethereum !== 'undefined') {
-    try {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      await provider.send("eth_requestAccounts", []);
-      const signer = provider
-
+  }, 1000);
+}
