@@ -35,16 +35,4 @@ function startTimer(duration) {
 
   const interval = setInterval(() => {
     let minutes = Math.floor(timer / 60);
-    let seconds = timer % 60;
-
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    display.textContent = `Waiting... ${minutes}:${seconds}`;
-
-    if (--timer < 0) {
-      clearInterval(interval);
-      display.textContent = 'Time expired.';
-    }
-  }, 1000);
-}
+    let seconds = timer
