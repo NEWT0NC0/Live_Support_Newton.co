@@ -84,7 +84,7 @@ footer .copyright {
 }
 
 .box {
-  background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent */
   backdrop-filter: blur(8px); /* Glassy blur */
   -webkit-backdrop-filter: blur(8px); /* Safari support */
   padding: 30px;
